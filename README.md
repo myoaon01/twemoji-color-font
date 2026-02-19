@@ -26,6 +26,7 @@ outline emoji are included for backwards/fallback compatibility.
 * [Uninstalling](#uninstalling)
 * [Building](#building)
 * [License](#license)
+* [윈도우 기본폰트로 설치&적용 방법](#윈도우-기본폰트로-설치&적용-방법)
 
 ## Examples
 
@@ -224,9 +225,9 @@ Requires:
 * FontForge 20190801+
 * SVGO
 * make
-* [SCFBuild][13] *(Created for this project!)*
+* [SCFBuild][13] 
 
-[13]: https://github.com/13rac1/scfbuild
+[13]: https://github.com/myoaon01/scfbuild.git
 
 Setup and build on Ubuntu 20.04 LTS:
 
@@ -237,9 +238,9 @@ devscripts python3-fontforge python3-pip python3-yaml imagemagick \
 git make debhelper build-essential
 sudo npm install -g svgo
 sudo pip3 install fonttools
-git clone https://github.com/13rac1/twemoji-color-font.git
+git clone https://github.com/myoaon01/twemoji-color-font.git
 cd twemoji-color-font
-git clone https://github.com/13rac1/scfbuild.git SCFBuild
+git clone https://github.com/myoaon01/scfbuild.git
 make -j 4
 ```
 
@@ -247,3 +248,24 @@ make -j 4
 
 The artwork and TTF fonts are licensed CC-BY-4.0. Please see
 [LICENSE.md](LICENSE.md) for details.
+
+
+## 윈도우 기본폰트로 설치&적용 방법
+
+윈도우에선 COLRv1을, 크롬 계열 브라우저에선 CDBT를 사용한다.
+이에 맞춰 컬러 프로파일을 추가해야 함.
+
+Ubuntu 2404.1.68.0 에서 빌드.
+```
+sudo apt install python3-venv
+python3 -m venv [폰트가 저장된 폴더 경로]
+source [폰트가 저장된 폴더 경로]/bin/activate
+
+pip install nanoemoji
+maximum_color --bitmaps TwitterColorEmoji-SVGinOT.ttf
+```
++ 그 후 만들어진 ```Font.ttf```의 이름을 ```TwitterColorEmoji-SVGinOT.ttf```로 다시 바꿔준다.
++ TwitterColorEmoji-SVGinOT.ttf를 TwitterColorEmoji-SVGinOT-Win-(폰트 버전) 폴더에 집어넣어준다.
++ TwitterColorEmoji-SVGinOT-Win-(폰트 버전) 폴더를 윈도우 환경의 컴퓨터로 옮겨주고, install.cmd를 더블클릭해 설치.
++ ```Font Cache Delete.bat```를 더블클릭하면 폰트 캐시가 지워지고 자동으로 재부팅이 됨.
++ 재부팅이 된 후, ```win + .```을 눌러 이모지가 잘 적용되었는지 확인한다.
