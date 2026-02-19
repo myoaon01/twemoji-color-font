@@ -26,7 +26,7 @@ outline emoji are included for backwards/fallback compatibility.
 * [Uninstalling](#uninstalling)
 * [Building](#building)
 * [License](#license)
-* [윈도우 기본폰트로 설치&적용 방법](#윈도우-기본폰트로-설치&적용-방법)
+* [윈도우 기본폰트로 설치&적용 방법](#install-on-Windows-default-font)
 
 ## Examples
 
@@ -250,7 +250,7 @@ The artwork and TTF fonts are licensed CC-BY-4.0. Please see
 [LICENSE.md](LICENSE.md) for details.
 
 
-## 윈도우-기본폰트로-설치&적용-방법
+## install on Windows default font
 
 윈도우에선 COLRv1을, 크롬 계열 브라우저에선 CDBT를 사용한다.
 이에 맞춰 컬러 프로파일을 추가해야 함.
