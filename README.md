@@ -26,7 +26,7 @@ outline emoji are included for backwards/fallback compatibility.
 * [Uninstalling](#uninstalling)
 * [Building](#building)
 * [License](#license)
-* [윈도우 기본폰트로 설치&적용 방법](https://github.com/myoaon01/twemoji-color-font?tab=readme-ov-file#%EC%9C%88%EB%8F%84%EC%9A%B0-%EA%B8%B0%EB%B3%B8%ED%8F%B0%ED%8A%B8%EB%A1%9C-%EC%84%A4%EC%B9%98%EC%A0%81%EC%9A%A9-%EB%B0%A9%EB%B2%95)
+* [윈도우 기본폰트로 설치&적용 방법](#윈도우-기본폰트로-설치&적용-방법)
 
 ## Examples
 
