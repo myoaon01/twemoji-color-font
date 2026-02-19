@@ -240,7 +240,7 @@ sudo npm install -g svgo
 sudo pip3 install fonttools
 git clone https://github.com/myoaon01/twemoji-color-font.git
 cd twemoji-color-font
-git clone https://github.com/myoaon01/scfbuild.git
+git clone https://github.com/myoaon01/scfbuild.git SCFBuild
 make -j 4
 ```
 
