@@ -1,0 +1,79 @@
+name: Build
+
+on:
+  pull_request:
+
+jobs:
+  build-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            inkscape potrace imagemagick \
+            python3-fontforge python3-fonttools python3-yaml \
+            npm git make debhelper devscripts build-essential
+          sudo npm install -g svgo
+          git clone https://github.com/13rac1/scfbuild.git SCFBuild
+
+      - name: Build
+        run: make fast
+
+      - name: Collect metadata
+        run: |
+          MERGE_ID=$(git rev-parse --short HEAD)
+          PRNUMBER=${GITHUB_REF_NAME%/merge}
+          echo "ARTIFACT_NAME=PR-$PRNUMBER-$MERGE_ID" >> $GITHUB_ENV
+
+      - name: Store packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}
+          path: |
+            build/*.deb
+            build/*-Linux-*.tar.gz
+            build/*.zip
+          compression-level: 0
+
+      - name: Store regular package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}-regular
+          path: |
+            build/*.zip
+            !build/*-MacOS-*.zip
+            !build/*-Win-*.zip
+          compression-level: 0
+
+      - name: Store Linux package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}-linux
+          path: build/*-Linux-*.tar.gz
+          compression-level: 0
+
+      - name: Store Deb package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}-deb
+          path: build/*.deb
+          compression-level: 0
+
+      - name: Store MacOS package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}-macos
+          path: build/*-MacOS-*.zip
+          compression-level: 0
+
+      - name: Store Windows package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_NAME}}-windows
+          path: build/*-Win-*.zip
+          compression-level: 0
